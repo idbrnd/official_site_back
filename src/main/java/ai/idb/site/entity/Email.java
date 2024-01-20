@@ -29,6 +29,9 @@ public class Email extends BaseIdEntity {
     @Column(name = "email", length = 255)
     private String email;
 
+    @Column(name = "type")
+    private EmailType emailType;
+
     public Email(final String email) {
         checkNotNull(email, "Email cannot be null.");
         checkArgument(EMAIL_PATTERN.matcher(email).matches(), "이메일 형식이 잘못 되었습니다.");

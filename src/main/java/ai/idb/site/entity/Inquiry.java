@@ -19,15 +19,15 @@ import java.util.List;
 @Entity
 public class Inquiry extends BaseIdEntity {
 
-    @ManyToOne(fetch = LAZY, optional = false)
-    @JoinColumn(name = "email_id")
-    private Email to;
-
-    @OneToMany(cascade = ALL, orphanRemoval = true, mappedBy = "inquery")
-    private List<Email> carbonCopy = new ArrayList<>();
-
-    @OneToMany(cascade = ALL, orphanRemoval = true, mappedBy = "inquery")
-    private List<Email> blindCarbonCopy = new ArrayList<>();
+//    @ManyToOne(fetch = LAZY, optional = false)
+//    @JoinColumn(name = "email_id")
+//    private Email to;
+//
+//    @OneToMany(cascade = ALL, orphanRemoval = true, mappedBy = "inquery")
+//    private List<Email> carbonCopy = new ArrayList<>();
+//
+//    @OneToMany(cascade = ALL, orphanRemoval = true, mappedBy = "inquery")
+//    private List<Email> blindCarbonCopy = new ArrayList<>();
 
     @Column(nullable = true)
     private String companyName;
