@@ -1,17 +1,13 @@
 package ai.idb.site.controller.inquiry.dto;
 
-import ai.idb.site.entity.InquiryType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Lob;
+import lombok.Getter;
 
-import static jakarta.persistence.EnumType.STRING;
-
+@Getter
 public class InquirySendRequest {
-    private String companyName;
-    private String position;
-    private String name;
-    private String contact;
-    private String inquiryType;
-    private String contexts;
+	private String companyName;
+	private String position;
+	private String name;
+	private String contact;
+	private String inquiryType;
+	private String contexts;
 }
