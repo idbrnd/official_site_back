@@ -1,6 +1,5 @@
 package ai.idb.site.controller.inquiry;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,21 +21,18 @@ public class InquirySenderController {
 
 	/** 문의 등록 */
 	@PostMapping
-	public void askIDB(final @RequestBody InquirySendRequest req) {
-		String to = "bkmin@idb.ai";
-		List<String> cc = new ArrayList<>();
-		List<String> bcc = new ArrayList<>();
+	public void inquiryIDB(final @RequestBody InquirySendRequest req) {
 		inquiryService.sendEmail(
 			new SendInquiryCommand(
 				"bkmin@idb.ai",
-				List.of(""),
-				List.of(""),
+				List.of("juhan211@naver.com"),
+				List.of("jhbyeon@idb.ai"),
 				req.getCompanyName(),
-				req.getInquiryType(),
-				req.getContexts(),
+				req.getPosition(),
 				req.getName(),
 				req.getContact(),
-				req.getPosition(),
+				req.getEmail(),
+				req.getInquiryType(),
 				req.getContexts()
 			)
 		);
