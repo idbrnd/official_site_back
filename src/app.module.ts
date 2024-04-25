@@ -7,6 +7,7 @@ import { MailService } from './util/mail.service';
 import { TypeormConfigService } from './config/typeorm-config.service';
 import { MailConfigService } from './config/mail-config.service';
 import { ConfigModule } from '@nestjs/config';
+import { BrochureModule } from './brochure/brochure.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { ConfigModule } from '@nestjs/config';
       useClass: TypeormConfigService,
     }),
     TypeOrmModule.forFeature([Inquiry]),
+    BrochureModule,
   ],
   providers: [InquiryService, MailService, MailConfigService],
   controllers: [InquiryController],
